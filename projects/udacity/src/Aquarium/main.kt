@@ -13,4 +13,6 @@ fun buildAquarium() {
 
     val myAquarium3 = Aquarium(numberOfFish = 9)
     println("volume: ${myAquarium3.volume}")
+
+    fishExample()
 }

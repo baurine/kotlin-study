@@ -22,6 +22,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="16dp"
+            android:tint="?android:attr/textColorPrimary"
             app:srcCompat="@drawable/shr_logo" />
 
         <TextView
@@ -35,6 +36,7 @@
 
         <!-- Snippet from "Add text fields" section goes here. -->
         <android.support.design.widget.TextInputLayout
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -46,6 +48,7 @@
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/password_text_input"
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -65,6 +68,7 @@
 
             <android.support.design.button.MaterialButton
                 android:id="@+id/next_button"
+                style="@style/Widget.Shrine.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -72,7 +76,7 @@
                 android:text="@string/shr_button_next" />
 
             <android.support.design.button.MaterialButton
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Shrine.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="12dp"

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.*
+import android.view.animation.AccelerateDecelerateInterpolator
 import com.google.codelabs.mdc.kotlin.shrine.network.ProductEntry
 import com.google.codelabs.mdc.kotlin.shrine.staggeredgridlayout.StaggeredProductCardRecyclerViewAdapter
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.*
@@ -26,6 +27,9 @@ class ProductGridFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // setup toolbar
         (activity as AppCompatActivity).setSupportActionBar(view.toolbar)
+//        view.toolbar.setNavigationOnClickListener(NavigationIconClickListener(activity!!, view.product_grid))
+        view.toolbar.setNavigationOnClickListener(
+                NavigationIconClickListener(activity!!, view.product_grid, AccelerateDecelerateInterpolator()))
 
         // setup recycler view
         val productLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)

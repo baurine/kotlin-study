@@ -6,10 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ProductGridFragment">
 
-    <android.support.design.widget.AppBarLayout
-        app:elevation="0dp"
+    <LinearLayout
+        style="@style/Widget.Shrine.Backdrop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="100dp"
+        android:paddingBottom="100dp">
+
+        <include layout="@layout/shr_backdrop"/>
+    </LinearLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,11 +33,12 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
-        android:elevation="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
         android:background="@color/productGridBackgroundColor"
+        android:elevation="6dp"
+        android:visibility="gone"
         app:layout_behavior="string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.RecyclerView

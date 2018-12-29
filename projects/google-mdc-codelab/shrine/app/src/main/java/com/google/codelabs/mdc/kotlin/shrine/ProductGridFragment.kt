@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.*
 import com.google.codelabs.mdc.kotlin.shrine.network.ProductEntry
+import com.google.codelabs.mdc.kotlin.shrine.staggeredgridlayout.StaggeredProductCardRecyclerViewAdapter
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.*
 
 class ProductGridFragment : Fragment() {
@@ -26,13 +27,22 @@ class ProductGridFragment : Fragment() {
         (activity as AppCompatActivity).setSupportActionBar(view.toolbar)
 
         // setup recycler view
-        val productAdapter = ProductCardRecyclerViewAdapter(ProductEntry.initProductEntryList(resources))
+        val productLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
+        productLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return if (position % 3 == 2) 2 else 1
+            }
+        }
+
+//        val productAdapter = ProductCardRecyclerViewAdapter(ProductEntry.initProductEntryList(resources))
+        val productAdapter = StaggeredProductCardRecyclerViewAdapter(ProductEntry.initProductEntryList(resources))
+
         view.recycler_view.apply {
             setHasFixedSize(true)
-            layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+            layoutManager = productLayoutManager
             adapter = productAdapter
-            val largePadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing)
-            val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small)
+            val largePadding = resources.getDimensionPixelSize(R.dimen.shr_staggered_product_grid_spacing_large)
+            val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_staggered_product_grid_spacing_small)
             addItemDecoration(ProductGridItemDecoration(largePadding, smallPadding))
         }
     }

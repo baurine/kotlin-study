@@ -3,6 +3,7 @@ package com.google.codelabs.mdc.kotlin.shrine
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.*
@@ -29,7 +30,12 @@ class ProductGridFragment : Fragment() {
         (activity as AppCompatActivity).setSupportActionBar(view.toolbar)
 //        view.toolbar.setNavigationOnClickListener(NavigationIconClickListener(activity!!, view.product_grid))
         view.toolbar.setNavigationOnClickListener(
-                NavigationIconClickListener(activity!!, view.product_grid, AccelerateDecelerateInterpolator()))
+                NavigationIconClickListener(
+                        activity!!,
+                        view.product_grid,
+                        AccelerateDecelerateInterpolator(),
+                        ContextCompat.getDrawable(context!!, R.drawable.shr_branded_menu),
+                        ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu)))
 
         // setup recycler view
         val productLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)

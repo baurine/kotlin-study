@@ -54,3 +54,13 @@ CardView 现在已被 android.support.design.card.MaterialCardView 取代。
 ### MDC 104
 
 添加背景菜单，这个设计很有意思，让菜单隐藏在主内容之下。添加动效让主页内容下滑显示出菜单。
+
+---
+
+# Google ContraintLayout Codebase
+
+[Kotlin Android Fundamentals 02.3: Constraint layout using the Layout Editor](https://codelabs.developers.google.com/codelabs/kotlin-android-training-constraint-layout/#0)
+
+![](./contraint-layout.png)
+
+ContraintLayout 中的 baseline 对齐方式不知道在其它 Layout 中好实现不。

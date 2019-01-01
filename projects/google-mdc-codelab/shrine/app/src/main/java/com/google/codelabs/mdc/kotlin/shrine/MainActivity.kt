@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity(), NavigationHost {
             supportFragmentManager
                     .beginTransaction()
                     .add(R.id.container, LoginFragment())
+//                    .add(R.id.container, ColorsFragment())
                     .commit()
         }
     }

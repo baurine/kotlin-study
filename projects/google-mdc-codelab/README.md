@@ -4,7 +4,7 @@ Practice MDC with kotlin from [MDC Developer Tutorial](https://material.io/colle
 
 Demo:
 
-![](./demo.gif)
+![](./mdc.gif)
 
 ## Notes
 
@@ -57,10 +57,22 @@ CardView 现在已被 android.support.design.card.MaterialCardView 取代。
 
 ---
 
-# Google ContraintLayout Codebase
+# Google ContraintLayout Codelab
 
 [Kotlin Android Fundamentals 02.3: Constraint layout using the Layout Editor](https://codelabs.developers.google.com/codelabs/kotlin-android-training-constraint-layout/#0)
 
 ![](./contraint-layout.png)
 
 ContraintLayout 中的 baseline 对齐方式不知道在其它 Layout 中好实现不。
+
+---
+
+# Google Navigation Codelab
+
+[Navigation Codelab](https://codelabs.developers.google.com/codelabs/android-navigation/#0)
+
+整体思想是和 iOS 的 Storyboard 类似的，navigation 中的 action 就类似 Storyboard 中的 segue。
+
+NavHostFragment 是 navigation 的容器。
+
+在容器之外的组件，比如 Toolbar，NavigationView，需要一些额外的 API 和 navigation 关联起来。
